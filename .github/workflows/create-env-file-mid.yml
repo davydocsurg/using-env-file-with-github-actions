@@ -1,0 +1,18 @@
+name: Create env file mid
+
+on: [push]
+
+jobs:
+    create-env-file-mid:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Create .env file
+              run: |
+                  touch .env
+                  echo API_BASE_URL="https://some-api.com" >> .env
+                  echo API_KEY="some-key" >> .env
+                  echo API_SECRET="some-secret" >> .env
+                  cat .env
