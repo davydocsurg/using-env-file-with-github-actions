@@ -13,6 +13,5 @@ jobs:
               run: |
                   touch .env
                   echo ${{secrets.TEST_SECRET_KEYS}} >> .env
-                  cat .env
             - name: Test printing your secret (Remove this step in production)
               run: cat $HOME/secrets/my_secret.json
