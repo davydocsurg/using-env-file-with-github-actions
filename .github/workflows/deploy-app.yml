@@ -1,21 +1,22 @@
 name: Deploy Application
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    env:
-      ENVIRONMENT: production
-      DEPLOYMENT_URL: https://example.com/deploy
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    deploy:
+        runs-on: ubuntu-latest
+        env:
+            ENVIRONMENT: production
+            DEPLOYMENT_URL: https://example.com/deploy
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Deploy to Server
-        run: curl -X POST ${{ env.DEPLOYMENT_URL }} \
-             -H "Content-Type: application/json" \
-             -d '{"environment":"${{ env.ENVIRONMENT }}"}'
+            - name: Deploy to Server
+              run: |
+                  curl -X POST ${{ env.DEPLOYMENT_URL }} \
+                  -H "Content-Type: application/json" \
+                  -d '{"environment":"${{ env.ENVIRONMENT }}"}'
