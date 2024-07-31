@@ -9,7 +9,7 @@ jobs:
             SOME_API_KEY: "123456abcdef"
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v4
+              uses: actions/checkout@v3
 
             - name: Create .env file
               run: echo "SOME_API_KEY=${{ env.SOME_API_KEY }}" > .env
