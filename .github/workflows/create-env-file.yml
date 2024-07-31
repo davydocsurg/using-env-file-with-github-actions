@@ -1,4 +1,4 @@
-name: Create Env File
+name: Env Key Example
 
 on: [push]
 
