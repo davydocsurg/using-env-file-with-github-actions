@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         env:
             ENVIRONMENT: production
-            DEPLOYMENT_URL: https://example.com/deploy
+            DEPLOYMENT_URL: https://baeldung.com
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
